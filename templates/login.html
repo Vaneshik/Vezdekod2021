@@ -1,0 +1,23 @@
+{% extends "base.html"%}
+
+{% block content %}
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+        <p>
+            {{ form.password.label() }}<br>
+            {{ form.password(class="form-control") }}<br>
+            {% for error in form.password.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+        {% if message != '' %}
+        <div class="alert alert-danger" role="alert">{{message}}</div>
+        {% endif %}
+    </form>
+    <p class="redirect_button">Еще нет аккаунта? <a href="/register">Зарегистрироваться</a></p>
+{% endblock %}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark" style>
+    <a class="navbar-brand" href="/">На главную</a>
+    {% if current_user.is_authenticated %}
+    <a class="btn btn-primary" href="/logout">Выйти</a>
+    {% else %}
+    <p>
+        <a class="btn btn-primary " href="/register">Регистрация</a>
+        <a class="btn btn-success" href="/login">Вход</a>
+    </p>
+    {% endif %}
+</nav>
+{% block content %}{% endblock %}
+</body>
+</html>
