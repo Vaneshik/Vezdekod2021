@@ -1,0 +1,30 @@
+body {
+  background-color: #d9afd9;
+  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
+  font-family: "Comfortaa", cursive;
+  text-align: center;
+  margin-top: 10%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 40px;
+}
+.item {
+  text-align: center;
+}
+
+img {
+  height: 256px;
+  width: 256px;
+  border-radius: 20px;
+  border: 2px solid white;
+}
+
+h1 h2 h3 h4 {
+  word-wrap: break-word;
+  width: 100px;
+}
